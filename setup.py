@@ -26,6 +26,7 @@ setuptools.setup(
         'test': [
             'pytest',
             'pytest-qt',
+            'pytest-faulthandler',
             'pytest-xvfb',
             'tox',
         ],
