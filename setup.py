@@ -23,6 +23,12 @@ setuptools.setup(
         'pyqt5',
     ],
     extras_require={
+        'test': [
+            'pytest',
+            'pytest-qt',
+            'pytest-xvfb',
+            'tox',
+        ],
         'dev': [
             'gitignoreio',
         ],
