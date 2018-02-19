@@ -25,7 +25,7 @@ This project is a running PyQt5 application with:
 
 .. |Travis build| image:: https://travis-ci.org/altendky/basicpyqt5example.svg
    :alt: Travis build status
-.. _Travis build: https://travis-ci.org/altendky/altendpyqt5
+.. _Travis build: https://travis-ci.org/altendky/basicpyqt5example
 
 .. |AppVeyor build| image:: https://ci.appveyor.com/api/projects/status/4684eguimdh31n2i?svg=true
    :alt: AppVeyor build status
