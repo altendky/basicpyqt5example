@@ -1,7 +1,7 @@
 basicpyqt5example
 ======
 
-|Travis build|_ |AppVeyor build|_ |codecov|_
+|Travis build|_ |AppVeyor build|_
 
 This project is meant to provide a working example project covering some basic good
 practices.  There is usually room for preference but it's often good to have an example
@@ -30,10 +30,6 @@ This project is a running PyQt5 application with:
 .. |AppVeyor build| image:: https://ci.appveyor.com/api/projects/status/4684eguimdh31n2i?svg=true
    :alt: AppVeyor build status
 .. _AppVeyor build: https://ci.appveyor.com/project/KyleAltendorf/basicpyqt5example
-
-.. |codecov| image:: https://codecov.io/gh/altendky/basicpyqt5example/branch/develop/graph/badge.svg
-   :alt: codecov coverage status
-.. _codecov: https://codecov.io/gh/altendky/basicpyqt5example
 
 .. _Tox: https://tox.readthedocs.io/en/latest/
 .. _Py.Test: https://docs.pytest.org/en/latest/
