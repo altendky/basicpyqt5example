@@ -34,7 +34,6 @@ build_script:
 
 test_script:
   - tox
-  - codecov
 
 artifacts:
   - path: "dist\\*.whl"
