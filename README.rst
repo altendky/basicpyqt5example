@@ -1,7 +1,7 @@
 basicpyqt5example
 ======
 
-|Travis|_ |AppVeyor|_ |codecov|_
+|Travis build|_ |AppVeyor build|_ |codecov|_
 
 This project is meant to provide a working example project covering some basic good
 practices.  There is usually room for preference but it's often good to have an example
@@ -23,13 +23,13 @@ This project is a running PyQt5 application with:
   * Travis_
 * `gitignoreio`_ for managing .gitignore
 
-.. |Travis| image:: https://travis-ci.org/altendky/basicpyqt5example.svg
+.. |Travis build| image:: https://travis-ci.org/altendky/basicpyqt5example.svg
    :alt: Travis build status
-.. _Travis: https://travis-ci.org/altendky/altendpyqt5
+.. _Travis build: https://travis-ci.org/altendky/altendpyqt5
 
-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/4684eguimdh31n2i?svg=true
+.. |AppVeyor build| image:: https://ci.appveyor.com/api/projects/status/4684eguimdh31n2i?svg=true
    :alt: AppVeyor build status
-.. _AppVeyor: https://ci.appveyor.com/project/KyleAltendorf/basicpyqt5example
+.. _AppVeyor build: https://ci.appveyor.com/project/KyleAltendorf/basicpyqt5example
 
 .. |codecov| image:: https://codecov.io/gh/altendky/basicpyqt5example/branch/develop/graph/badge.svg
    :alt: codecov coverage status
