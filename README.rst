@@ -17,6 +17,10 @@ This project is a running PyQt5 application with:
   * `Tox`_
   * `Py.Test`_
   * `pytest-qt`_
+* Builds and testing on (see badges above for direct build links):
+
+  * AppVeyor_
+  * Travis_
 * `gitignoreio`_ for managing .gitignore
 
 .. |Travis| image:: https://travis-ci.org/altendky/basicpyqt5example.svg
@@ -35,3 +39,5 @@ This project is a running PyQt5 application with:
 .. _Py.Test: https://docs.pytest.org/en/latest/
 .. _pytest-qt: https://pypi.python.org/pypi/pytest-qt
 .. _gitignoreio: https://pypi.python.org/pypi/gitignoreio
+.. _AppVeyor: https://www.appveyor.com/
+.. _Travis: https://travis-ci.org/
