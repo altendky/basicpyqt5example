@@ -19,17 +19,17 @@ This project is a running PyQt5 application with:
   * `pytest-qt`_
 * `gitignoreio`_ for managing .gitignore
 
-.. |Travis| image:: https://travis-ci.org/altendky/altendpyqt5.svg
+.. |Travis| image:: https://travis-ci.org/altendky/basicpyqt5example.svg
    :alt: Travis build status
 .. _Travis: https://travis-ci.org/altendky/altendpyqt5
 
-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/565xmcrd3rl7ark7?svg=true
+.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/4684eguimdh31n2i?svg=true
    :alt: AppVeyor build status
-.. _AppVeyor: https://ci.appveyor.com/project/KyleAltendorf/altendpyqt5
+.. _AppVeyor: https://ci.appveyor.com/project/KyleAltendorf/basicpyqt5example
 
-.. |codecov| image:: https://codecov.io/gh/altendky/altendpyqt5/branch/develop/graph/badge.svg
+.. |codecov| image:: https://codecov.io/gh/altendky/basicpyqt5example/branch/develop/graph/badge.svg
    :alt: codecov coverage status
-.. _codecov: https://codecov.io/gh/altendky/altendpyqt5
+.. _codecov: https://codecov.io/gh/altendky/basicpyqt5example
 
 .. _Tox: https://tox.readthedocs.io/en/latest/
 .. _Py.Test: https://docs.pytest.org/en/latest/
