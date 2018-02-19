@@ -1,5 +1,8 @@
 -r requirements.txt
 
+# https://github.com/pypa/virtualenv/issues/1050
+git+https://github.com/pypa/virtualenv@e8163e83a92c9098f51d390289323232ece15e3b; sys_platform == 'win32'
+
 pytest==3.4.0
 pytest-faulthandler==1.4.1
 pytest-qt==2.3.1
