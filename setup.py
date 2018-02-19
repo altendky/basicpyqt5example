@@ -1,8 +1,13 @@
 import setuptools
 
+
+with open('README.rst') as f:
+    readme = f.read()
+
 setuptools.setup(
     name='basicpyqt5example',
     author="Kyle Altendorf",
+    long_description=readme,
     classifiers=[
         ' :: '.join([
             'License',
