@@ -17,6 +17,7 @@ This project is a running PyQt5 application with:
   * `Tox`_
   * `Py.Test`_
   * `pytest-qt`_
+  * `PyInstaller`_
 * Builds and testing on (see badges above for direct build links):
 
   * AppVeyor_
@@ -34,6 +35,7 @@ This project is a running PyQt5 application with:
 .. _Tox: https://tox.readthedocs.io/en/latest/
 .. _Py.Test: https://docs.pytest.org/en/latest/
 .. _pytest-qt: https://pypi.python.org/pypi/pytest-qt
+.. _PyInstaller: https://www.pyinstaller.org/
 .. _gitignoreio: https://pypi.python.org/pypi/gitignoreio
 .. _AppVeyor: https://www.appveyor.com/
 .. _Travis: https://travis-ci.org/

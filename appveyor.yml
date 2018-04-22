@@ -14,6 +14,7 @@ environment:
     - TOXENV: py36
       PYTHON: "C:\\Python36-x64"
       BUILD_WHEEL: 1
+      BUILD_EXE: 1
 
 # https://www.appveyor.com/docs/how-to/rdp-to-build-worker/
 init:
@@ -26,17 +27,22 @@ install:
   - copy "%PYTHON%\\python3.dll" "%VENV%\\Scripts"
   - "%VENV%\\Scripts\\activate"
   - pip install -r requirements.test
+  - if defined BUILD_EXE pip install -r requirements.build
   - pip install .
   #- ps: Update-AppveyorBuild -Version "v$(python -c 'import sys; import basicpyqt5example; sys.stdout.write(altendpyqt5.__version__)') b$Env:APPVEYOR_BUILD_NUMBER"
 
 build_script:
   - if defined BUILD_WHEEL python setup.py bdist_wheel
+  - if defined BUILD_EXE venv\\Scripts\\pyinstaller pyinstaller.spec
+  - if defined BUILD_EXE mkdir "BasicPyQt5Example %APPVEYOR_BUILD_VERSION%"
+  - if defined BUILD_EXE move dist\\basicpyqt5example "BasicPyQt5Example %APPVEYOR_BUILD_VERSION%\\BasicPyQt5Example %APPVEYOR_BUILD_VERSION%"
 
 test_script:
   - tox
 
 artifacts:
   - path: "dist\\*.whl"
+  - path: "BasicPyQt5Example %APPVEYOR_BUILD_VERSION%"
 
 # https://www.appveyor.com/docs/how-to/rdp-to-build-worker/
 on_finish:

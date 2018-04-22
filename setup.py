@@ -38,5 +38,8 @@ setuptools.setup(
         'dev': [
             'gitignoreio',
         ],
+        'build': [
+            'pyinstaller',
+        ],
     },
 )
