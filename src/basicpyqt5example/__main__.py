@@ -20,20 +20,38 @@ __license__ = 'GPLv3+'
 
 
 import logging
-import sys
 import pathlib
+import sys
+import tempfile
 import traceback
 
 logger = logging.getLogger(__name__)
-
+stream_handler = logging.StreamHandler()
 # Consider if you want a fresh file each time or a running log.
 # mode='w' -> fresh file
 # mode='a' (or no mode specified) -> running log
-file_handler = logging.FileHandler('log', mode='w', encoding='utf-8')
-logger.addHandler(file_handler)
+logs_to_try = (
+    'log',
+    pathlib.Path.home()/'log',
+    'temp',
+)
+for log in logs_to_try:
+    if log == 'temp':
+        log = tempfile.NamedTemporaryFile(
+            prefix='log-{}-'.format(__file__),
+            delete=False,
+        )
+        log.close()
+        log = log.name
 
-stream_handler = logging.StreamHandler()
+    try:
+        file_handler = logging.FileHandler(log, mode='w', encoding='utf-8')
+        break
+    except PermissionError:
+        continue
+
 logger.addHandler(stream_handler)
+logger.addHandler(file_handler)
 
 
 def excepthook(excType=None, excValue=None, tracebackobj=None):
@@ -45,13 +63,14 @@ def excepthook(excType=None, excValue=None, tracebackobj=None):
 
 
 sys.excepthook = excepthook
-
 logger.critical('Logging sys.excepthook installed')
 logger.critical('Import in progress for {}'.format(pathlib.Path(__file__).resolve()))
 logger.critical('sys.argv: {}'.format(sys.argv))
 
+
 # Uncomment to test that you can at least see this in the logfile
 # raise Exception('you should see this')
+
 
 
 import PyQt5.QtWidgets
