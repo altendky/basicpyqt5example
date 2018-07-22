@@ -72,7 +72,6 @@ logger.critical('sys.argv: {}'.format(sys.argv))
 # raise Exception('you should see this')
 
 
-
 import PyQt5.QtWidgets
 
 import basicpyqt5example.mainwindow
@@ -82,7 +81,7 @@ def main():
     app = PyQt5.QtWidgets.QApplication(sys.argv)
 
     main_window = basicpyqt5example.mainwindow.MainWindow()
-    main_window.ui.show()
+    main_window.show()
 
     app.exec()
 

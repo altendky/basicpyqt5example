@@ -34,11 +34,17 @@ def drop_args(target, *args, **kwargs):
     return f
 
 
-class MainWindow:
-    def __init__(self):
-        self.ui = PyQt5.uic.loadUi(
-            pathlib.Path(__file__).parents[0] / 'mainwindow.ui',
-        )
+Ui, UiBase = PyQt5.uic.loadUiType(
+    pathlib.Path(__file__).parents[0] / 'mainwindow.ui',
+)
+
+
+class MainWindow(UiBase):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.ui = Ui()
+        self.ui.setupUi(self)
 
         self.ui.actionSystem_Info.triggered.connect(
             drop_args(self.open_system_info),
@@ -46,9 +52,9 @@ class MainWindow:
         self.system_info_dialogs = []
 
     def open_system_info(self):
-        dialog = basicpyqt5example.systeminfo.SystemInfoDialog()
-        dialog.ui.finished.connect(drop_args(self.close_system_info, dialog))
-        dialog.ui.show()
+        dialog = basicpyqt5example.systeminfo.SystemInfoDialog(self)
+        dialog.finished.connect(drop_args(self.close_system_info, dialog))
+        dialog.show()
         self.system_info_dialogs.append(dialog)
 
     def close_system_info(self, dialog):

@@ -35,10 +35,16 @@ PYQT_VERSION_STR: {PyQt5.QtCore.PYQT_VERSION_STR}
 SIP_VERSION_STR: {sip.SIP_VERSION_STR}'''
 
 
-class SystemInfoDialog:
-    def __init__(self):
-        self.ui = PyQt5.uic.loadUi(
-            pathlib.Path(__file__).parents[0] / 'systeminfo.ui',
-        )
+Ui, UiBase = PyQt5.uic.loadUiType(
+    pathlib.Path(__file__).parents[0] / 'systeminfo.ui',
+)
+
+
+class SystemInfoDialog(UiBase):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.ui = Ui()
+        self.ui.setupUi(self)
 
         self.ui.label.setText(system_info)
