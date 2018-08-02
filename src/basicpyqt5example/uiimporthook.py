@@ -1,3 +1,4 @@
+import io
 import pathlib
 import sys
 
@@ -19,8 +20,14 @@ class UiFinder:
         py_path = path / (base + suffix + '.py')
         ui_path = path / (base + '.ui')
 
+        try:
+            with open(ui_path) as f:
+                ui = io.StringIO(f.read())
+        except FileNotFoundError:
+            return
+
         with open(py_path, 'w') as py:
-            PyQt5.uic.compileUi(ui_path, py, indent=4)
+            PyQt5.uic.compileUi(ui, py, indent=4)
 
 
 def install_ui_finder():
