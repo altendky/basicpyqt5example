@@ -19,12 +19,13 @@ __license__ = 'GPLv3+'
 #   <http://www.gnu.org/licenses/>.
 
 
-import pathlib
 import sys
 
 import PyQt5.QtCore
 import PyQt5.uic
 import sip
+
+import basicpyqt5example.systeminfo_ui
 
 
 system_info = f'''\
@@ -35,16 +36,11 @@ PYQT_VERSION_STR: {PyQt5.QtCore.PYQT_VERSION_STR}
 SIP_VERSION_STR: {sip.SIP_VERSION_STR}'''
 
 
-Ui, UiBase = PyQt5.uic.loadUiType(
-    pathlib.Path(__file__).parents[0] / 'systeminfo.ui',
-)
-
-
-class SystemInfoDialog(UiBase):
+class SystemInfoDialog(PyQt5.QtWidgets.QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.ui = Ui()
+        self.ui = basicpyqt5example.systeminfo_ui.Ui_Dialog()
         self.ui.setupUi(self)
 
         self.ui.label.setText(system_info)
