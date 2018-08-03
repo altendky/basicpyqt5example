@@ -74,6 +74,8 @@ logger.critical('sys.argv: {}'.format(sys.argv))
 
 import PyQt5.QtWidgets
 
+import basicpyqt5example.uiimporthook
+basicpyqt5example.uiimporthook.install_ui_finder()
 import basicpyqt5example.mainwindow
 
 

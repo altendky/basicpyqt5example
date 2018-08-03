@@ -19,10 +19,9 @@ __license__ = 'GPLv3+'
 #   <http://www.gnu.org/licenses/>.
 
 
-import pathlib
-
 import PyQt5.uic
 
+import basicpyqt5example.mainwindow_ui
 import basicpyqt5example.systeminfo
 
 
@@ -34,16 +33,11 @@ def drop_args(target, *args, **kwargs):
     return f
 
 
-Ui, UiBase = PyQt5.uic.loadUiType(
-    pathlib.Path(__file__).parents[0] / 'mainwindow.ui',
-)
-
-
-class MainWindow(UiBase):
+class MainWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.ui = Ui()
+        self.ui = basicpyqt5example.mainwindow_ui.Ui_MainWindow()
         self.ui.setupUi(self)
 
         self.ui.actionSystem_Info.triggered.connect(
