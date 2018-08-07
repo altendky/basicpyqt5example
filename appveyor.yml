@@ -2,17 +2,17 @@ environment:
   VENV: "%APPVEYOR_BUILD_FOLDER%\\venv"
 
   matrix:
-    - TOXENV: py35
-      PYTHON: "C:\\Python35"
-
-    - TOXENV: py35
-      PYTHON: "C:\\Python35-x64"
-
     - TOXENV: py36
       PYTHON: "C:\\Python36"
 
     - TOXENV: py36
       PYTHON: "C:\\Python36-x64"
+
+    - TOXENV: py37
+      PYTHON: "C:\\Python37"
+
+    - TOXENV: py37
+      PYTHON: "C:\\Python37-x64"
       BUILD_WHEEL: 1
       BUILD_EXE: 1
 
