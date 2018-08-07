@@ -1,12 +1,11 @@
+dist: xenial
+
 language: python
 
 sudo: false
 
 addons:
   apt:
-    sources:
-      # https://bugreports.qt.io/browse/QTBUG-64928?focusedCommentId=389951&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-389951
-      - sourceline: "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
     packages:
       - xvfb
 
