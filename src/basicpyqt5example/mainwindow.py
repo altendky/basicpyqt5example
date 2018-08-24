@@ -35,7 +35,7 @@ def drop_args(target, *args, **kwargs):
 
 
 Ui, UiBase = PyQt5.uic.loadUiType(
-    pathlib.Path(__file__).parents[0] / 'mainwindow.ui',
+    pathlib.Path(__file__).with_name('mainwindow.ui'),
 )
 
 

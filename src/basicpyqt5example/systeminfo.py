@@ -36,7 +36,7 @@ SIP_VERSION_STR: {sip.SIP_VERSION_STR}'''
 
 
 Ui, UiBase = PyQt5.uic.loadUiType(
-    pathlib.Path(__file__).parents[0] / 'systeminfo.ui',
+    pathlib.Path(__file__).with_name('systeminfo.ui'),
 )
 
 
