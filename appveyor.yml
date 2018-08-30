@@ -29,7 +29,7 @@ install:
   - pip install -r requirements.test
   - if defined BUILD_EXE pip install -r requirements.build
   - pip install .
-  #- ps: Update-AppveyorBuild -Version "v$(python -c 'import sys; import basicpyqt5example; sys.stdout.write(altendpyqt5.__version__)') b$Env:APPVEYOR_BUILD_NUMBER"
+  #- ps: Update-AppveyorBuild -Version "v$(python -c 'import sys; import basicpyqt5example; sys.stdout.write(basicpyqt5example.__version__)') b$Env:APPVEYOR_BUILD_NUMBER"
 
 build_script:
   - if defined BUILD_WHEEL python setup.py bdist_wheel
