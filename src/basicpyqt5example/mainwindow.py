@@ -34,18 +34,44 @@ def drop_args(target, *args, **kwargs):
     return f
 
 
-Ui, UiBase = PyQt5.uic.loadUiType(
-    pathlib.Path(__file__).with_name('mainwindow.ui'),
-)
+import inspect
+def ui(path=None):
+    def decorator(cls):
+        if path is None:
+            ui_path = pathlib.Path(inspect.getmodule(cls).__file__).with_suffix('.ui')
+        else:
+            ui_path = path
+
+        Ui, UiBase = PyQt5.uic.loadUiType(ui_path)
+
+        if cls.__bases__ != (object,):
+            raise Exception('tsk-tsk, multiple inheritance')
+
+        if type(cls) is not type:
+            raise Exception('sorry, gotta have our own metaclass')
+
+        cls.__bases__ += (UiBase,)
+
+        original_init = cls.__init__
+
+        def __init__(self, *args, **kwargs):
+            super(cls, self).__init__()
+
+            self.ui = Ui()
+            self.ui.setupUi(self)
+
+            original_init(self, *args, **kwargs)
+
+        cls.__init__ = __init__
+
+        return cls
+
+    return decorator
 
 
-class MainWindow(UiBase):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-
-        self.ui = Ui()
-        self.ui.setupUi(self)
-
+@ui()
+class MainWindow:
+    def __init__(self):
         self.ui.actionSystem_Info.triggered.connect(
             drop_args(self.open_system_info),
         )
